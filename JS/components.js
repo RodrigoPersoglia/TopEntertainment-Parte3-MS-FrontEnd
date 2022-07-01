@@ -2,7 +2,7 @@ export const NavMenu = () => {
     return `<div id="top-header">
         <div id="logo">
             <img src="../Imagenes/logo.png" alt="logo">
-            <h1>The Homers Games</h1>
+            <h1>Top Entertainment</h1>
         </div>
         <div id="navegacion">
             <button id="login">Iniciar Sesion</button>
@@ -79,4 +79,72 @@ export const Footer = () => {
 }
 
 
+export const Carousel = () => {
+  return `<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../Imagenes/tmnt.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../Imagenes/Redfall.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../Imagenes/bf.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>`
+}
 
+export const Card = (nombre,descuento,precio,imagenUrl) => {
+  return `<div class="juego-info-1">
+  <img src="${imagenUrl}" alt="">
+  <h2 id="ofertas-juego-titulo">${nombre}</h2>
+  <div class="juego-info-1-precio">
+    <h3 class="descuento">${descuento}</h3>
+    <h3 id="ofertas-juego-precio">${precio}</h3>
+  </div>`
+}
+
+export const CardTripleJuego = (nombre,descripcion,imagenUrl) => {
+  return `
+  <div class="triple-lista-juego">
+    <img class="img-opacity" src="${imagenUrl}" alt="">
+    <div class="triple-juego-info">
+      <h2>${nombre}</h2>
+      <p>${descripcion}</p>
+    </div>
+  </div>`
+}
+
+export const CardJuegosGratis = (nombre,fecha,imagenUrl) => {
+  return `<div class="juego-gratuito-info">
+      <img src="${imagenUrl}" alt="">
+      <h2 id="juego-gratuito-titulo">${nombre}</h2>
+      <h3>Gratis hasta el <span id="fecha-gratis">${fecha}</span></h3>
+    </div>`
+}
+
+export const CardVarios = (nombre,precio,imagenUrl) => {
+  return `<div class="varios-subcontainer-juego">
+  <img src="${imagenUrl}" alt="">
+  <div class="varios-subcontainer-juego-info">
+    <h2>${nombre}</h2>
+    <div class="varios-subcontainer-juego-info-precio">
+      <h3>${precio}</h3>
+    </div>
+  </div>
+</div>`
+}
