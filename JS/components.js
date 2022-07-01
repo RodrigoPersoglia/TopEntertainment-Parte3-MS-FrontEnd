@@ -148,3 +148,12 @@ export const CardVarios = (nombre,precio,imagenUrl) => {
   </div>
 </div>`
 }
+
+export const CardCategory = (nombre,imagenUrl) => {
+  return `<div class="categorias-populares-subcontainer">
+  <div class="categorias-populares-subcontainer-imagenes">
+      <img src="${imagenUrl}" alt="juego">
+  </div>
+  <h3 id="nombre-categoria">${nombre}</h3>
+</div>`
+}

@@ -212,10 +212,13 @@ main{
 #container-principal{
     display: flex;
     gap: 3%;
+    min-height: 70vh;
 }
 
 #juegos-filtrados{
     max-width: 75%;
+    min-width: 75%;
+    height: 75%;
     margin: 3% 0% 0% 0%;
     display: flex;
     flex-wrap: wrap;
@@ -272,7 +275,7 @@ main{
     border: none;
     border-radius: 3px;
     padding: 4% 0% 4% 2%;
-    color: whitesmoke
+    color: whitesmoke;
     
 }
 
@@ -403,3 +406,8 @@ footer p{
     font-size: 175%;
 }
 
+#searchButton{
+    width: 70%;
+    height: 2rem;
+    text-align: center;
+}
