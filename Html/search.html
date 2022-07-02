@@ -34,25 +34,15 @@
             </div>
             <div id="container-principal">
                 <div id="juegos-filtrados">
-
-
-                    <!-- <div class="juego-info-1">
-                        <img src="../Imagenes/juego1.jpg" alt="">
-                        <h2 id="ofertas-juego-titulo">Fall guys</h2>
-                        <div class="juego-info-1-precio">
-                          <h3 class="descuento">-60%</h3>
-                          <h3 id="ofertas-juego-precio">14,99 US$</h3>
-                        </div>
-                    </div> -->
-
-
                 </div>
+
+                
     
                 <aside id="filtros-container">
                     <div id="filtros">
                         <div id="barra-filtro">
                             <i class="fas fa-search"></i>
-                            <input type="search" id="filtro-input" name="Q" placeholder="Palabras Clave"  aria-label="Search">
+                            <input type="search" id="filtro-input" name="Q" placeholder="Buscar"  aria-label="Search">
                         </div>
                         <div class="dropdown">
                             <button type="button" id = "searchButton">Buscar</button>
@@ -61,31 +51,25 @@
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Precio</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Menos de 10$</a>
-                              <a class="dropdown-item" href="#">Menos de 20$</a>
-                              <a class="dropdown-item" href="#">Menos de 30$</a>
-                              <a class="dropdown-item" href="#">En Oferta</a>
                             </div>
                         </div>
                         <hr>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Accion</a>
-                              <a class="dropdown-item" href="#">Aventura</a>
-                              <a class="dropdown-item" href="#">Beat 'em Up</a>
-                              <a class="dropdown-item" href="#">Cooperativo</a>
-                            </div>
+                            <select class="selects"  id="selectCategoria" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="Plataforma">
+                            <option value="null" selected>Selec. Categoria</option>
+                        </select>
                         </div>
                         <hr>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plataforma</button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Play Station</a>
-                              <a class="dropdown-item" href="#">Xbox</a>
-                              <a class="dropdown-item" href="#">PC</a>
-                              <a class="dropdown-item" href="#">Nintendo Switch</a>
-                            </div>
+                            <select class="selects"  id="selectPlataforma" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="Plataforma">
+                            <option value="null" selected>Selec. Plataforma</option>
+                        </select>
+                        </div>
+                        <hr>
+                        <div class="dropdown">
+                            <select class="selects"  id="selectClasificacion" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="Plataforma">
+                            <option value="null" selected>Selec. Clasificación</option>
+                        </select>
                         </div>
                         <hr>
                 </aside>

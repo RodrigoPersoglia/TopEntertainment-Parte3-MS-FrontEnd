@@ -1,16 +1,26 @@
-import {NavMenu,Footer,CardCategory} from './components.js'
+import {NavMenu,Footer,CardCategory,Card} from './components.js'
 
 const header = document.getElementById("Menu");
 const contacto = document.getElementById("Contacto");
 const categorias = document.getElementById("categorias-populares-container");
-const searchButton = document.getElementById("filtro-input");
+const juegosFiltrados = document.getElementById("juegos-filtrados");
+const searchButton = document.getElementById("searchButton");
+const selectPlataforma = document.getElementById("selectPlataforma");
+const selectClasificacion = document.getElementById("selectClasificacion");
+const selectCategorias = document.getElementById("selectCategoria");
+
 
 window.onload = () => {
     header.innerHTML=NavMenu();
     contacto.innerHTML=Footer();
     cargarCategoriasPopulares();
+    cargarPlataformas();
+    cargarClasificacion();
+    cargarCategorias();
     searchButton.onclick = Search;
 }
+
+
 
 
 // Cargar Categorias desde la API
@@ -23,5 +33,57 @@ const cargarCategoriasPopulares = () => {
 
 // Logica de busqueda
 const Search = () => {
- 
+    juegosFiltrados.innerHTML =null;
+    var url = `https://localhost:7284/juegos`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+    data.forEach(e => {
+        // juegosFiltrados.innerHTML +=Card(e.nombreProducto,'0%',e.precio,e.imagenes[0])
+        juegosFiltrados.innerHTML +=Card(e.nombreProducto,'0%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),'../Imagenes/Redfall.jpg');
+        });
+    });
+}
+
+
+const cargarPlataformas = () => {
+    var url = `https://localhost:7284/Plataforma`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+    data.forEach(e => {
+        var option = document.createElement("option");
+        option.text = e.nombrePlataforma;
+        option.value = e.plataformaId;
+        selectPlataforma.add(option);
+        });
+    });
+}
+
+const cargarClasificacion = () => {
+    var url = `https://localhost:7284/Clasificacion`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+    data.forEach(e => {
+        var option = document.createElement("option");
+        option.text = e.nombreClasificacion;
+        option.value = e.clasificacionId;
+        selectClasificacion.add(option);
+        });
+    });
+}
+
+const cargarCategorias = () => {
+    var url = `https://localhost:7284/Categoria`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+    data.forEach(e => {
+        var option = document.createElement("option");
+        option.text = e.nombreCategoria;
+        option.value = e.categoriaId;
+        selectCategorias.add(option);
+        });
+    });
 }

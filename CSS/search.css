@@ -212,7 +212,7 @@ main{
 #container-principal{
     display: flex;
     gap: 3%;
-    min-height: 70vh;
+    min-height: 90vh;
 }
 
 #juegos-filtrados{
@@ -303,7 +303,7 @@ main{
     border-radius: 4px;
 }
 
-#dropdownMenuButton{
+#dropdownMenuButton , .selects{
     background-color: rgba(18,18,18,255);
     border: none;
     width: 100%;
@@ -407,7 +407,16 @@ footer p{
 }
 
 #searchButton{
+    margin-top: 5%;
+    margin-left: 15%;
     width: 70%;
     height: 2rem;
+    background-color:  rgba(0,116,228,255);
+    border: none;
+    color: white;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5%;
 }
