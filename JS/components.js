@@ -10,8 +10,8 @@ export const NavMenu = () => {
         </div>
     </div>
     <div id="fixed-header">
-        <form class="search-bar">
-          <input id="Busqueda" type="text" placeholder="Search.." name="search">
+        <form class="search-bar" action="./search.html?">
+          <input id="Busqueda" type="text" placeholder="Search.." name="juego">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <a href="../HTML/index.html">Descubrir</a>
@@ -108,14 +108,14 @@ export const Carousel = () => {
 </div>`
 }
 
-export const Card = (nombre,descuento,precio,imagenUrl) => {
-  return `<div class="juego-info-1">
+export const Card = (id,nombre,descuento,precio,imagenUrl) => {
+  return `<a href="./game.html?juegoID=${id}"><div class="juego-info-1">
   <img src="${imagenUrl}" alt="">
   <h2 id="ofertas-juego-titulo">${nombre}</h2>
   <div class="juego-info-1-precio">
     <h3 class="descuento">${descuento}</h3>
     <h3 id="ofertas-juego-precio">${precio}</h3>
-  </div>`
+  </div></a>`
 }
 
 export const CardTripleJuego = (nombre,descripcion,imagenUrl) => {
@@ -149,11 +149,11 @@ export const CardVarios = (nombre,precio,imagenUrl) => {
 </div>`
 }
 
-export const CardCategory = (nombre,imagenUrl) => {
-  return `<div class="categorias-populares-subcontainer">
+export const CardCategory = (id,nombre,imagenUrl) => {
+  return `<a href="./search.html?categoria=${id}"><div class="categorias-populares-subcontainer">
   <div class="categorias-populares-subcontainer-imagenes">
       <img src="${imagenUrl}" alt="juego">
   </div>
   <h3 id="nombre-categoria">${nombre}</h3>
-</div>`
+</div></a>`
 }

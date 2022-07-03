@@ -24,7 +24,7 @@ window.onload = () => {
 
 const CargarOfertas = () => {
     for (var i = 0; i < 5; i++) {
-        ofertas.innerHTML+=Card('Fall guys','-60%','U$S 14.99','../Imagenes/juego1.jpg')
+        ofertas.innerHTML+=Card(1,'Fall guys','-60%','U$S 14.99','../Imagenes/juego1.jpg')
      }
 }
 

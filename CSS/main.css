@@ -137,6 +137,10 @@ main{
 #ofertas{
     margin: 0% 13% 5% 13%;
 }
+#ofertas a{
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 #nombre-seccion{
     text-decoration: none;
