@@ -231,7 +231,7 @@ main{
 #container-principal{
     display: flex;
     gap: 3%;
-    min-height: 90vh;
+    min-height: 100vh;
 }
 
 #juegos-filtrados{
@@ -332,6 +332,21 @@ main{
     padding: 8% 0% 8% 5%;
     font-weight: bold;
 }
+
+#minPrice, #maxPrice{
+    background-color: #202020;
+    margin: 2px;
+    border-radius: 4px;
+}
+
+#rangoLabel{
+    color: #808080;
+    margin-bottom: 0.3rem;
+    margin-left: 5%;
+
+
+}
+
 
 #dropdownMenuButton:hover{
     color: white
@@ -438,4 +453,13 @@ footer p{
     display: inline-block;
     font-size: 16px;
     border-radius: 5%;
+}
+
+.precios{
+    display: flex;
+    align-self: center;
+}
+.precios b{
+align-self: center;
+color: #808080;
 }

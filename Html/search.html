@@ -49,11 +49,18 @@
                         </div>
                         <hr>
                         <div class="dropdown">
-                            <label for="">Rango de precios</label>
+                            <label id="rangoLabel"> <b>Rango de precios</b></label>
                             <div class="rango">
-                                
-                                <input class="btn btn-secondary dropdown-toggle" type="number" id="minPrice" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="1"  min="1" pattern="^[0-9]+"></input>
-                                <input class="btn btn-secondary dropdown-toggle" type="number" id="maxPrice" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"    min="1" pattern="^[0-9]+"></input>
+                                <div class="precios">
+                                    <b>$</b>
+                                    <input type="number"  id="minPrice" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  min="1" pattern="^[0-9]+" placeholder="Min"></input>
+                                </div>
+                                <div class="precios">
+                                    <b>$</b>
+                                    <input type="number" id="maxPrice" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"    min="1" pattern="^[0-9]+" placeholder="Max"></input>
+                                </div>
+
+
                             </div>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -77,6 +84,7 @@
                             <option value="null" selected>Selec. Clasificación</option>
                         </select>
                         </div>
+                        <hr>
                 </aside>
             </div>
 

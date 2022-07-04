@@ -1,5 +1,9 @@
 import {NavMenu,Footer,CardCategory,Card} from './components.js'
 
+let minPrice = null;
+let maxPrice = null;
+let juego = '';
+let categoria = '';
 const header = document.getElementById("Menu");
 const contacto = document.getElementById("Contacto");
 const categorias = document.getElementById("categorias-populares-container");
@@ -12,8 +16,8 @@ const input = document.getElementById("filtro-input");
 const precioMinimo = document.getElementById("minPrice");
 const precioMaximo = document.getElementById("maxPrice");
 
-let juego = '';
-let categoria = '';
+
+
 
 window.onload = () => {
     header.innerHTML=NavMenu();
@@ -27,12 +31,26 @@ window.onload = () => {
     if(parametros.juego!=undefined){juego+='descripcion='+parametros.juego;}
     if(parametros.categoria!=undefined){categoria+='categoria='+parametros.categoria;}
     CargarJuegos();
-    mostrar();
 }
 
-const mostrar = () => {
-    console.log(precioMinimo.value);
-    console.log(precioMaximo.value);
+precioMinimo.addEventListener('change',precios)
+precioMaximo.addEventListener('change',precios)
+
+
+function precios(){
+    minPrice = null;
+    maxPrice = null;
+    if(precioMaximo.value!='' & precioMaximo.value!=''){
+        if((precioMaximo.value-precioMinimo.value)>-1){
+            minPrice = precioMinimo.value;
+            maxPrice = precioMaximo.value;
+        }
+        else{alert('El precio máximo no puede ser inferior al precio mínimo')}
+    }
+    else{
+        if(precioMinimo.value!=''){minPrice = precioMinimo.value;}
+        else{maxPrice = precioMaximo.value;}
+    }
 }
 
 
@@ -71,6 +89,8 @@ const Search = () => {
     if(selectCategorias.value!= 'null'){query+=`categoria=${selectCategorias.value}&`;}
     if(selectClasificacion.value!== 'null'){query+=`clasificacion=${selectClasificacion.value}&`;}
     if(selectPlataforma.value!== 'null'){query+=`plataforma=${selectPlataforma.value}&`;}
+    if(minPrice!= null){query+=`min=${minPrice}&`;}
+    if(maxPrice!= null){query+=`max=${maxPrice}&`;}
     juegosFiltrados.innerHTML =null;
     fetch(query+=`descripcion=${input.value}`)
     .then(response => response.json())
