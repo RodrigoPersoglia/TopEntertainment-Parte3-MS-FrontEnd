@@ -226,6 +226,7 @@ main{
 #right-header a:hover{
     text-decoration: none;
     color: rgba(0,116,228,255);
+    cursor: pointer;
 }
 
 #container-principal{

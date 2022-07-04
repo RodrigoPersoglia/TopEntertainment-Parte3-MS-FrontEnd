@@ -15,6 +15,7 @@ const selectCategorias = document.getElementById("selectCategoria");
 const input = document.getElementById("filtro-input");
 const precioMinimo = document.getElementById("minPrice");
 const precioMaximo = document.getElementById("maxPrice");
+const limpiarFiltros = document.getElementById("right-header");
 
 
 
@@ -31,6 +32,17 @@ window.onload = () => {
     if(parametros.juego!=undefined){juego+='descripcion='+parametros.juego;}
     if(parametros.categoria!=undefined){categoria+='categoria='+parametros.categoria;}
     CargarJuegos();
+    limpiarFiltros.onclick = Limpiar;
+}
+
+const Limpiar = () => {
+    selectCategorias.value  = null;
+    selectClasificacion.value = null;
+    selectPlataforma.value = null;
+    precioMinimo.value = null;
+    precioMaximo.value = null;
+    input.value = null;
+
 }
 
 precioMinimo.addEventListener('change',precios)
