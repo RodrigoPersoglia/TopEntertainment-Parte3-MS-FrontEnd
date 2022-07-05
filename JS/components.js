@@ -6,7 +6,6 @@ export const NavMenu = () => {
         </div>
         <div id="navegacion">
             <button id="login">Iniciar Sesion</button>
-            <button id="getPlatform">Obtener Plataforma</button>
         </div>
     </div>
     <div id="fixed-header">
@@ -156,4 +155,64 @@ export const CardCategory = (id,nombre,imagenUrl) => {
   </div>
   <h3 id="nombre-categoria">${nombre}</h3>
 </div></a>`
+}
+
+
+export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,precio,plataforma,clasificacion,categoria,stock) => {
+  return `<div id="juego">
+  <h2>${nombre}</h2>
+  
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="${portada}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="${imagen1}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="${imagen2}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+  <div class="descripcion">
+      <h3>Descripcion:</h3>
+      <p>${descripcion}</p>
+  </div>
+</div>
+<div id="info-juego">
+  <img src="${portada}" alt="Icono del Juego">
+  <div id="precio">
+      <h2>${precio}</h2>
+  </div>
+  <div id="botones">
+      <button id="comprar" class="searchButton">Comprar Ahora</button>
+      <button id="añadir"  class="searchButton">Añadir al Carrito</button>
+  </div>
+  <div id="caracteristicas">
+      <h3>Características</h3>
+      <hr>
+      <div class="caracteristicas"><p>Plataforma:</p><span>${plataforma}</span></div>
+      <hr>
+      <div class="caracteristicas"><p>Clasificacion:</p><span>${clasificacion}</span></div>
+      <hr>
+      <div class="caracteristicas"><p>Categorias:</p><span>${categoria}</span></div>
+      <hr>
+      <div class="caracteristicas"><p>Stock:</p><span>${stock}</span></div>
+      <hr>
+  </div>
+</div>`
 }
