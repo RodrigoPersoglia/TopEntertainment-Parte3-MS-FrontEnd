@@ -199,8 +199,8 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
       <h2>${precio}</h2>
   </div>
   <div id="botones">
-      <button id="comprar" class="searchButton">Comprar Ahora</button>
-      <button id="añadir"  class="searchButton">Añadir al Carrito</button>
+      <button id="comprarBTN" class="searchButton">Comprar Ahora</button>
+      <button id="addBTN"  class="searchButton">Añadir al Carrito</button>
   </div>
   <div id="caracteristicas">
       <h3>Características</h3>
