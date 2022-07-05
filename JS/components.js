@@ -6,6 +6,7 @@ export const NavMenu = () => {
         </div>
         <div id="navegacion">
             <button id="login">Iniciar Sesion</button>
+            <button id="getPlatform">Obtener Plataforma</button>
         </div>
     </div>
     <div id="fixed-header">
@@ -108,13 +109,18 @@ export const Carousel = () => {
 }
 
 export const Card = (id,nombre,descuento,precio,imagenUrl) => {
-  return `<a href="./game.html?juegoID=${id}"><div class="juego-info-1">
-  <img src="${imagenUrl}" alt="">
-  <h2 id="ofertas-juego-titulo">${nombre}</h2>
-  <div class="juego-info-1-precio">
-    <h3 class="descuento">${descuento}</h3>
-    <h3 id="ofertas-juego-precio">${precio}</h3>
-  </div></a>`
+  return `
+    <div class="juego-info-1" onclick="location.href='./game.html?juegoID=${id}'">
+      <img src="${imagenUrl}" alt="">
+      <div class="juego-info-1-text">
+        <h2 id="ofertas-juego-titulo">${nombre}</h2>
+        <div class="juego-info-1-precio">
+          <h3 class="descuento">${descuento}</h3>
+          <h3 id="ofertas-juego-precio">${precio}</h3>
+        </div>
+      </div>
+    </div>
+  `
 }
 
 export const CardTripleJuego = (nombre,descripcion,imagenUrl) => {
@@ -157,8 +163,7 @@ export const CardCategory = (id,nombre,imagenUrl) => {
 </div></a>`
 }
 
-
-export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,precio,plataforma,clasificacion,categoria,stock) => {
+export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,precio,plataforma,clasificacion,categoria,stock,link) => {
   return `<div id="juego">
   <h2>${nombre}</h2>
   
@@ -167,7 +172,8 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="${portada}" class="d-block w-100" alt="...">
@@ -178,6 +184,9 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
         <div class="carousel-item">
           <img src="${imagen2}" class="d-block w-100" alt="...">
         </div>
+        <div class="carousel-item">
+        <iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
