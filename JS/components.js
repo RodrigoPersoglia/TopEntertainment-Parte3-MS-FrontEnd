@@ -88,13 +88,13 @@ export const Carousel = () => {
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../Imagenes/tmnt.png" class="d-block w-100" alt="...">
+    <img src="../Imagenes/bf.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Imagenes/Redfall.jpg" class="d-block w-100" alt="...">
+    <img src="../Imagenes/Redfall.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Imagenes/bf.jpg" class="d-block w-100" alt="...">
+    <img src="../Imagenes/tmnt.png" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -134,11 +134,11 @@ export const CardTripleJuego = (nombre,descripcion,imagenUrl) => {
   </div>`
 }
 
-export const CardJuegosGratis = (nombre,fecha,imagenUrl) => {
+export const CardNuevos = (nombre,fecha,imagenUrl) => {
   return `<div class="juego-gratuito-info">
       <img src="${imagenUrl}" alt="">
       <h2 id="juego-gratuito-titulo">${nombre}</h2>
-      <h3>Gratis hasta el <span id="fecha-gratis">${fecha}</span></h3>
+      <h3>Lanzamiento <span id="fecha-gratis">${fecha}</span></h3>
     </div>`
 }
 
@@ -185,7 +185,7 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
           <img src="${imagen2}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-        <iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="${link}?autoplay=1&controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

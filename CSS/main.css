@@ -157,6 +157,15 @@ main{
 
 .juego-info-1{
     color: white;
+    background-color: #181818;
+    border-radius: 5px;
+}
+.juego-info-1:hover{
+    cursor: pointer;
+    transition: 1s;
+    background-color: rgba(70,70,70,255);
+    border: 0.1px solid wheat;
+    transform: scale(1.08);
 }
 
 .juego-info-1 img{
@@ -177,6 +186,16 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.juego-info-1-text{
+    padding: 3% 3% 0% 3%;
+    min-height: 110px;
+    max-height: 110px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .descuento{
@@ -252,7 +271,8 @@ main{
 }
 
 .juego-gratuito-info img{
-    max-width: 100%;
+    width: 200px;
+    height: 300px;
     border-radius: 4px;
     margin-bottom: 10%;
 }

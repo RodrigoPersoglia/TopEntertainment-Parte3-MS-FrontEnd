@@ -1,0 +1,355 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+/* Colores:
+    Azul:               rgba(0,116,228,255);
+    Fondo Oscuro:       rgba(18,18,18,255);
+    Fondo Claro:        rgba(42,42,42,255);
+    Margen de Pagina:   0% 13% 0% 13%;
+
+/* ------------------------ header ---------------------------*/
+body{
+    background-color: rgba(18,18,18,255);
+}
+
+#top-header{
+    background-color: rgba(42,42,42,255);
+    padding: 0.5% 2% 0.5% 2%;
+    display: flex;
+    color: gainsboro;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+}
+
+#logo img{
+    max-width: 15%;
+    max-height: 15%;
+}
+
+#navegacion{
+    display: flex;
+    align-items: center;
+}
+#top-header button{
+    color: white;
+    border: none;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+#login{
+    background-color: rgba(42,42,42,255);
+}
+
+#login:hover{
+    border: 1px solid white;
+}
+
+#getPlatform{
+    background-color: rgba(0,116,228,255);
+}
+
+h1{
+    font-size: 1.2rem;
+    margin-left: 2%;
+}
+
+#fixed-header{
+    background-color: rgba(18,18,18,255);
+    padding: 2% 13% 2% 13%;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+#fixed-header a{
+    margin: 0% 0% 0% 5%;
+    color: gainsboro;
+    font-size:1rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#fixed-header a:hover{
+    color: rgba(0,116,228,255);
+}
+
+.search-bar{
+    background-color: rgba(30,30,30,255);
+}
+
+#Busqueda{
+    width: 80%;
+    background-color: rgba(30,30,30,255);
+    border: none;
+    border-radius: 10px;
+    padding: 4% 4% 4% 4%;
+    color: white;
+}
+
+#Busqueda:hover,#Busqueda:focus{
+    background-color: rgba(35,35,35,255);
+    border: none;
+    outline: none;
+
+}
+
+.search-bar button{
+    background-color: rgba(35,35,35,255);
+    color: lightgrey;
+    border: none;
+}
+
+.search-bar button:hover{
+    background-color: rgba(70,70,70,255);
+    color: lightgrey;
+    border: none;
+}
+
+/* -------------------- main ------------------------*/
+
+#carrito-header{
+    font-size: 2rem;
+    color: whitesmoke;
+    margin: 3% 13% 0% 13%;
+}
+
+#carrito-container{
+    margin: 3% 13% 3% 13%;
+    display: flex;
+    gap: 4%;
+}
+
+/*--------- cards ---------*/
+
+.carrito-card-container{
+    max-width: 66%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.carrito-card{
+    
+    background-color:rgba(32,32,32,255);
+    display: flex;
+    color: rgba(144,144,144,255);
+    padding: 1% 1.5% 1% 1.5%;
+    gap: 3%;
+    border-radius: 3px;
+    align-items: center;
+}
+
+.carrito-card-imagen{
+    max-width: 25%;
+}
+
+.carrito-card-imagen img{
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.carrito-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.carrito-card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-card-info-categoria{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 50%;
+}
+
+#carrito-card-info-precio{
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.carrito-card-info-categoria h3{
+    white-space: nowrap;
+    margin: 0% 3% 0% 0%;
+    font-size: 0.6rem;
+    background-color: rgba(55,55,55,255);
+    color: rgba(200,200,200,255);
+    border-radius: 5px;
+    padding: 2% 4% 2% 4%;
+}
+
+#carrito-card-info-titulo{
+    font-size: 1.3rem;
+    color: whitesmoke;
+}
+
+#carrito-card-info-titulo:hover{
+    text-decoration: underline 1px;
+}
+
+.carrito-card-info-clasificacion{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.carrito-card-info-clasificacion h3{
+    font-size: 0.7rem;
+}
+
+.carrito-card-info-clasificacion img{
+    max-width: 7%;
+    max-height: 7%;
+}
+
+.carrito-card-footer{
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carrito-card-plataforma{
+    font-size: 1rem;
+}
+
+#eliminar-juego{
+    font-size: 1rem;
+}
+
+#eliminar-juego:hover{
+    color: rgb(212, 212, 212);
+    text-decoration: underline 1px;
+}
+
+/*------ Resumen de Compra ------*/
+
+.carrito-info{
+    color:whitesmoke;
+}
+
+.carrito-info-header {
+    margin-bottom: 8%;
+}
+
+.carrito-info-header h2{
+    font-size: 1.5rem;
+}
+
+.carrito-info-calculo{
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-info-calculo-item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7%;
+}
+
+.carrito-info-calculo-item h2{
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+#impuesto{
+    margin-left: 10%;
+    color: rgba(144,144,144,255);
+}
+
+#subtotal-container{
+    margin: 2% 0% 4% 0%;
+}
+
+#boton-comprar{
+    background-color: rgba(0,116,228,255);
+    color: white;
+    padding: 4.5%;
+    border-radius: 5px;
+    border: none;
+}
+
+#boton-comprar:hover{
+    background-color: rgba(30,146,258,255);
+}
+
+
+/*------------------------ Footer -------------------------*/
+
+footer{
+    padding: 2% 5% 1% 5%;
+    background-color: rgba(32,32,32,255);
+    color: rgb(90, 90, 90);
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(220, 220, 220);
+    transition: 0.3s;
+}
+
+footer align-self a:hover{
+    color: rgba(0,116,228,255);
+}
+
+#redes-logos{
+    font-size: 1.8rem;
+    margin: 0% 0% 3% 0%;
+}
+
+#redes-logos a{
+    margin-right: 1%;
+}
+
+.links-container{
+    display: flex;
+    gap: 5%;
+    margin: 0% 0% 4% 0%;
+}
+
+.links-container div{
+    min-width: 15%;
+}
+
+.links-container a{
+    display: block;
+}
+
+footer h2{
+    font-size: 1.2rem;
+}
+
+footer p{
+    max-width: 50%;
+    font-size: 0.8rem;
+    color: rgb(190, 190, 190);
+    margin: 4% 0% 2% 0%;
+}
+
+#final-links{
+    margin: 4% 0% 3% 0%;
+}
+
+#final-links a{
+    margin: 0% 2% 0% 0%;
+    font-size: 0.9rem;
+}
+
+#arrow{
+    position: absolute;
+    right: 5%;
+    font-size: 175%;
+}

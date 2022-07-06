@@ -32,7 +32,7 @@ const CargarJuegos = () => {
     fetch(query)
     .then(response => response.json())
     .then(e => {
-        main.innerHTML=CardJuegoPrincipal(e.nombreProducto,e.imagenes[0],e.imagenes[1],e.imagenes[2],e.descripcion,e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.plataforma.nombrePlataforma,e.clasificacion.nombreClasificacion,e.categorias[0].nombreCategoria,e.stock);
+        main.innerHTML=CardJuegoPrincipal(e.nombreProducto,e.imagenes[0],e.imagenes[1],e.imagenes[2],e.descripcion,e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.plataforma.nombrePlataforma,e.clasificacion.nombreClasificacion,e.categorias[0].nombreCategoria,e.stock,e.video);
         document.getElementById("comprarBTN").addEventListener("click", comprar);
         document.getElementById("addBTN").addEventListener("click", agregar);
         });
