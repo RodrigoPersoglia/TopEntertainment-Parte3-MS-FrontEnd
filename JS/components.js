@@ -1,3 +1,6 @@
+const linkAU = 'https://proyectosoftwareb2c.b2clogin.com/proyectosoftwareb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signin_signup&client_id=834ecd4c-c2fc-4d34-9087-3800e48aa4d8&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login'
+
+
 export const NavMenu = () => {
     return `<div id="top-header">
         <div id="logo">
@@ -5,8 +8,7 @@ export const NavMenu = () => {
             <h1>Top Entertainment</h1>
         </div>
         <div id="navegacion">
-            <button id="login">Iniciar Sesion</button>
-            <button id="getPlatform">Obtener Plataforma</button>
+           <a id="login" href="${linkAU}">Iniciar Sesion</a>
         </div>
     </div>
     <div id="fixed-header">

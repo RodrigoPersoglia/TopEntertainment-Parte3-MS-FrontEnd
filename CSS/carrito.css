@@ -46,11 +46,12 @@ body{
 }
 
 #login{
-    background-color: rgba(42,42,42,255);
+    text-decoration: none;
+    color: white;
 }
 
 #login:hover{
-    border: 1px solid white;
+    color: rgba(0,116,228,255);
 }
 
 #getPlatform{

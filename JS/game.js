@@ -18,7 +18,7 @@ window.onload = () => {
 
 
 const comprar = () => {
-    alert("Compra exitosa")
+    location.href='./carrito.html';
 }
 
 const agregar = () => {

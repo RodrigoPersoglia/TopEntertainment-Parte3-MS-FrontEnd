@@ -69,11 +69,11 @@ function precios(){
 const CargarJuegos = () => {
     let query = 'https://localhost:7284/juegos?'+categoria+'&'+juego;
     juegosFiltrados.innerHTML =null;
-    fetch(query)
-    .then(response => response.json())
-    .then(data => {
+    fetch(query).then(response => response.json()).then(data => {
     data.forEach(e => {
-        juegosFiltrados.innerHTML +=Card(e.juegoId,e.nombreProducto,'0%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
+        let bonificacion = 0;
+        if(e.enOferta==true){bonificacion=-15}
+        juegosFiltrados.innerHTML +=Card(e.juegoId,e.nombreProducto,bonificacion+'%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
         });
     });
 }

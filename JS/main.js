@@ -28,7 +28,7 @@ const CargarOfertas = () => {
     .then(response => response.json())
     .then(e => {
         for (var i = 0; i < 5; i++) {
-            ofertas.innerHTML+=Card(e[i].juegoId,e[i].nombreProducto,getRandomInt(1,50)+'%',e[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e[i].imagenes[0]);
+            ofertas.innerHTML+=Card(e[i].juegoId,e[i].nombreProducto,'-15%',e[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e[i].imagenes[0]);
          }
 
     });
