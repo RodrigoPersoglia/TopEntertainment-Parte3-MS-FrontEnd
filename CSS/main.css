@@ -170,9 +170,10 @@ main{
 }
 
 .juego-info-1 img{
-    max-width: 100%;
     border-radius: 5px;
     margin: 0% 0% 3% 0%;
+    width: 15vw;
+    height: 10vw;
 }
 
 .juego-info-1 h2{
@@ -190,12 +191,11 @@ main{
 }
 .juego-info-1-text{
     padding: 3% 3% 0% 3%;
-    min-height: 110px;
-    max-height: 110px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 75px;
     
 }
 
@@ -339,20 +339,26 @@ main{
 }
 
 .varios-subcontainer-juego img{
-    max-width: 20%;
     border-radius: 5px;
+    width: 112.5px;
+    height: 75px;
 }
 
 .varios-subcontainer-juego-info{
-    margin: 2% 0% 0% 6%;
+    margin: 0% 0% 0% 6%;
     min-width: 50%;
+}
+.varios-subcontainer-juego-info h2{
+    height: 64%;
+    display: block;
 }
 
 .varios-subcontainer-juego-info-precio{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15%;
+    height: 25px;
+    display: block;
 }
 
 .varios-subcontainer-juego h3{

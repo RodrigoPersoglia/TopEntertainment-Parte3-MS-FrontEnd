@@ -65,6 +65,14 @@ function precios(){
     }
 }
 
+const Recortar = (palabra) => {
+    if(palabra.length>32){
+        return palabra.substring(0,23)+'...';
+    }
+    return palabra
+}
+
+
 
 const CargarJuegos = () => {
     let query = 'https://localhost:7284/juegos?'+categoria+'&'+juego;
@@ -73,7 +81,7 @@ const CargarJuegos = () => {
     data.forEach(e => {
         let bonificacion = 0;
         if(e.enOferta==true){bonificacion=-15}
-        juegosFiltrados.innerHTML +=Card(e.juegoId,e.nombreProducto,bonificacion+'%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
+        juegosFiltrados.innerHTML +=Card(e.juegoId,Recortar(e.nombreProducto),bonificacion+'%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
         });
     });
 }
@@ -108,7 +116,9 @@ const Search = () => {
     .then(response => response.json())
     .then(data => {
     data.forEach(e => {
-        juegosFiltrados.innerHTML +=Card(e.juegoId,e.nombreProducto,'0%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
+        let bonificacion = 0;
+        if(e.enOferta==true){bonificacion=-15}
+        juegosFiltrados.innerHTML +=Card(e.juegoId,Recortar(e.nombreProducto),bonificacion+'%',e.precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e.imagenes[0]);
         });
     });
 }
@@ -118,10 +128,10 @@ const cargarCategoriasPopulares = () => {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-    data.forEach(e => {
-        categorias.innerHTML+=CardCategory(e.categoriaId,e.nombreCategoria,e.descripcion);
 
-        });
+        for (var i = 0; i < 4; i++) {
+            categorias.innerHTML+=CardCategory(data[i].categoriaId,data[i].nombreCategoria,data[i].descripcion);
+        }
     });
 }
 

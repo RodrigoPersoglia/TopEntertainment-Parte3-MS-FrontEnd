@@ -172,7 +172,8 @@ main{
 }
 
 .categorias-populares-subcontainer-imagenes img{
-    max-width: 100%;
+    width: 15vw;
+    height: 10vw;
     border-radius: 2px;
 }
 
@@ -273,6 +274,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 75px;
 
 }
 
