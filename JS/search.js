@@ -1,4 +1,4 @@
-import {NavMenu,Footer,CardCategory,Card} from './components.js'
+import {NavMenu,Footer,CardCategory,Card,gestionUsuario} from './components.js'
 
 let minPrice = null;
 let maxPrice = null;
@@ -33,6 +33,7 @@ window.onload = () => {
     if(parametros.categoria!=undefined){categoria+='categoria='+parametros.categoria;}
     CargarJuegos();
     limpiarFiltros.onclick = Limpiar;
+    gestionUsuario();
 }
 
 const Limpiar = () => {

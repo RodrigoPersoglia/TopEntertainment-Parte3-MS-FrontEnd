@@ -8,12 +8,14 @@ export const NavMenu = () => {
             <h1>Top Entertainment</h1>
         </div>
         <div id="navegacion">
-           <a id="login" href="${linkAU}">Iniciar Sesion</a>
+            <a id="nombreUsuario"></a>
+           <a id="login" href="${linkAU}">Iniciar Sesión</a>
+           <a id="logout" onclick=localStorage.clear();window.location.reload()>Cerrar Sesión</a>
         </div>
     </div>
     <div id="fixed-header">
         <form class="search-bar" action="./search.html?">
-          <input id="Busqueda" type="text" placeholder="Search.." name="juego">
+          <input id="Busqueda" type="text" placeholder="Buscar..." name="juego">
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <a href="../HTML/index.html">Descubrir</a>
@@ -187,7 +189,7 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
           <img src="${imagen2}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-        <iframe width="560" height="315" src="${link}?autoplay=1&controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="${link}?autoplay=1&controls=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -226,4 +228,41 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
       <hr>
   </div>
 </div>`
+}
+
+export const manejoToken = () => {
+  var token = getToken();
+  if(token!=null){
+      localStorage.clear(); 
+      let tokenDeco = parseJwt(token)
+      localStorage.setItem('userTE',tokenDeco.name);
+      localStorage.setItem('tokenUserTE', tokenDeco.idp_access_token);
+      window.location.href = "http://localhost:5500/HTML/index.html";
+  }
+}
+
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace('-', '+').replace('_', '/');
+  return JSON.parse(window.atob(base64));
+};
+
+function getToken(){
+  let url = window.location.toString();
+  var posicion = url.indexOf('token')
+  if(posicion===-1){return null}
+  return url.substring(posicion+6)
+}
+
+export const gestionUsuario = () => {
+  if(localStorage.getItem('tokenUserTE')!==null){
+    document.getElementById("nombreUsuario").innerHTML = 'Hola, '+localStorage.getItem('userTE')+'!'
+    document.getElementById("login").style.display = 'none';
+    document.getElementById("logout").style.display = 'block';
+    }
+  else{
+    document.getElementById("nombreUsuario").innerHTML = ''
+    document.getElementById("login").style.display = 'block';
+    document.getElementById("logout").style.display = 'none';
+    }
 }

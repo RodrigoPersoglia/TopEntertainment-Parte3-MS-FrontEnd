@@ -1,22 +1,7 @@
-import {NavMenu,Footer,Card,Carousel,CardTripleJuego,CardNuevos,CardVarios} from './components.js'
+import {NavMenu,Footer,Card,Carousel,CardTripleJuego,CardNuevos,CardVarios,manejoToken,gestionUsuario} from './components.js'
 
 
-
-
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
-};
-
-function getToken(){
-    let url = window.location.toString();
-    var posicion = url.indexOf('token')
-    if(posicion===-1){return null}
-    return url.substring(posicion+6)
-}
-
-if(getToken()!=null){localStorage.clear(); localStorage.setItem('user', parseJwt(getToken()).name);window.location.href = "http://localhost:5500/HTML/index.html";}
+manejoToken();
 
 
 
@@ -40,7 +25,7 @@ window.onload = () => {
     CargarTripleJuego();
     CargarJuegosGratis();
     CargarVarios();
-    if(localStorage.getItem('user')!==null){document.getElementById("login").innerHTML = localStorage.getItem('user')}
+    gestionUsuario();
 }
 
 

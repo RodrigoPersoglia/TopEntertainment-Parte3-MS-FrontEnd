@@ -354,3 +354,12 @@ footer p{
     right: 5%;
     font-size: 175%;
 }
+
+#nombreUsuario{
+    padding-right: 2rem;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgba(0,116,228,255);
+}

@@ -1,4 +1,4 @@
-import {NavMenu,Footer,CardJuegoPrincipal} from './components.js'
+import {NavMenu,Footer,CardJuegoPrincipal,gestionUsuario} from './components.js'
 
 const header = document.getElementById("Menu");
 const contacto = document.getElementById("Contacto");
@@ -13,7 +13,7 @@ window.onload = () => {
     const parametros = getQueryParams();
     if(parametros.juegoID!=undefined){idjuego=parametros.juegoID;}
     CargarJuegos();
-
+    gestionUsuario();
 }
 
 
