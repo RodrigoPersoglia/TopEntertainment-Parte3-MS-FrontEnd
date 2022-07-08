@@ -266,3 +266,34 @@ export const gestionUsuario = () => {
     document.getElementById("logout").style.display = 'none';
     }
 }
+
+export const CardCarrito = (portada,precio,nombre) => {
+  return `
+      <div class="carrito-card">
+        <div class="carrito-card-imagen">
+            <img onclick="" src="${portada}" alt="juego">
+        </div>
+        <div class="carrito-card-content">
+            <div class="carrito-card-header">
+                <div class="carrito-card-info-categoria">
+                    <h3>Juego Base</h3>
+                </div>
+                <h2 id="carrito-card-info-precio">${precio}.00 $USD</h2>
+            </div>
+            <div class="carrito-card-info">
+                <h2 id="carrito-card-info-titulo" onclick="">${nombre}</h2>
+                <div class="carrito-card-info-clasificacion">
+                    <img id="clasificacion-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/ESRB_2013_Everyone_Spanish.svg/800px-ESRB_2013_Everyone_Spanish.svg.png" alt="xd">
+                    <div class="clasificacion-info">
+                        <h3>Mayores de 18 años</h3>
+                        <h3>Violencia, Sangre, Lenguaje Ofensivo, Temas Sugestivos</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carrito-card-footer">
+                <h2 id="carrito-card-plataforma">Play Station 5</h2>
+                <h2 id="eliminar-juego" onclick="">Eliminar</h2>
+            </div>
+        </div>
+      </div>`
+}
