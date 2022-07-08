@@ -1,4 +1,4 @@
-const linkAU = 'https://proyectosoftwareb2c.b2clogin.com/proyectosoftwareb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signin_signup&client_id=834ecd4c-c2fc-4d34-9087-3800e48aa4d8&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login'
+const linkAU = 'https://proyectosoftwareb2c.b2clogin.com/proyectosoftwareb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signin_signup&client_id=834ecd4c-c2fc-4d34-9087-3800e48aa4d8&nonce=defaultNonce&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2FHtml%2Findex.html&scope=openid&response_type=id_token&prompt=login'
 
 
 export const NavMenu = () => {
