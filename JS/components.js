@@ -189,7 +189,7 @@ export const CardJuegoPrincipal = (nombre,portada,imagen1,imagen2,descripcion,pr
           <img src="${imagen2}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-        <iframe width="560" height="315" src="${link}?autoplay=1&controls=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="315" src="${link}?autoplay=1&controls=0&loop=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

@@ -18,11 +18,13 @@ window.onload = () => {
 
 
 const comprar = () => {
+    postCarrito();
     location.href='./carrito.html';
 }
 
 const agregar = () => {
-    alert("Se Agrego el producto al carrito")
+    postCarrito();
+    location.reload();
 }
 
 
@@ -55,11 +57,28 @@ function getQueryParams() {
 };
 
 
-const GetPlataformaByID = (id) => {
 
-    fetch('https://localhost:7284/Plataforma/'+id)
-    .then(response => response.json())
-    .then(e => { 
-        return e.nombrePlataforma;
-    });
+const postCarrito = () => {
+    let jsonBody={
+        "usuarioId": 1,
+        "productoId": idjuego,
+        "cantidad": 1
+      }
+      fetch(`https://localhost:7300/Api/Carrito/AñadirJuego`,{
+          method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonBody)
+            
+      })
+      .then((httpResponse)=>{
+          if(httpResponse.ok)
+              return httpResponse.json()
+      })
+      
+      .then(body => {
+          alert(body);
+      })
 }
