@@ -13,14 +13,16 @@ export const NavMenu = () => {
            <a id="logout" onclick=localStorage.clear();window.location.reload()>Cerrar Sesión</a>
         </div>
     </div>
-    <div id="fixed-header">
-        <form class="search-bar" action="./search.html?">
-          <input id="Busqueda" type="text" placeholder="Buscar..." name="juego">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <a href="../HTML/index.html">Descubrir</a>
-        <a href="../HTML/search.html">Examinar</a>
-        <a href="#">Noticias</a>
+    <div id="fixed-header-container">
+        <div id="fixed-header">
+          <form class="search-bar" action="./search.html?">
+            <input id="Busqueda" type="text" placeholder="Buscar..." name="juego">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <a href="../HTML/index.html">Descubrir</a>
+          <a href="../HTML/search.html">Examinar</a>
+        </div>
+        <a id="carrito-link" href="../HTML/carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
     </div>`
 }
 
@@ -259,11 +261,13 @@ export const gestionUsuario = () => {
     document.getElementById("nombreUsuario").innerHTML = 'Hola, '+localStorage.getItem('userTE')+'!'
     document.getElementById("login").style.display = 'none';
     document.getElementById("logout").style.display = 'block';
+    document.getElementById("carrito-link").style.display = 'block';
     }
   else{
     document.getElementById("nombreUsuario").innerHTML = ''
     document.getElementById("login").style.display = 'block';
     document.getElementById("logout").style.display = 'none';
+    document.getElementById("carrito-link").style.display = 'none';
     }
 }
 

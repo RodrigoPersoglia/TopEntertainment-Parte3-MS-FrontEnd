@@ -51,9 +51,22 @@ function getRandomInt(min, max) {
   }
 
 const CargarTripleJuego = () => {
+    fetch(`https://localhost:7284/juegos`)
+    .then(response => response.json())
+    .then(data => {
+        tripleJuego.innerHTML+=CardTripleJuego(data[7].nombreProducto,data[7].descripcion,data[7].imagenes[0])
+        tripleJuego.innerHTML+=CardTripleJuego(data[9].nombreProducto,data[9].descripcion,data[9].imagenes[0])
+        tripleJuego.innerHTML+=CardTripleJuego(data[15].nombreProducto,data[15].descripcion,data[15].imagenes[0])
+
+    });
+
+
     for (var i = 0; i < 3; i++) {
-        tripleJuego.innerHTML+=CardTripleJuego('A Plague Tale','Vive una aventura desgarradora por un mundo asombroso y despiadado,retorcido por las fuerzas sobrenaturales.','../Imagenes/plaguetale.jpg')
+        
      }
+
+
+
 }
 
 const CargarJuegosGratis = () => {
