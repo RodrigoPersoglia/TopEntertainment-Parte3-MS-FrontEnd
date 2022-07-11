@@ -1,4 +1,4 @@
-import {NavMenu,Footer,CardCarrito,gestionUsuario} from './components.js'
+import {NavMenu,Footer,CardCarrito,gestionUsuario,estaLogeado} from './components.js'
 
 const header = document.getElementById("Menu");
 const contacto = document.getElementById("Contacto");
@@ -23,25 +23,27 @@ window.onload = () => {
     gestionUsuario();
     CargarCarrito(); 
     botonComprar.onclick = EjecutarCompra;  
+    if(!estaLogeado()){location.href="./index.html"}
 }
 
 const CargarCarrito = () => {
-    let query2 = 'https://localhost:7300/Api/Carrito/ObtenerCarrito?id=1'
-    fetch(query2)
-    .then(response => response.json())
-    .then(data => {
-        let contador = 0;
-        data.juegos.forEach(e => {
-            RenderizarJuegos(e.productoId,contador)
-            contador++;
-        });
-        if(contador>0){carritovacio.style.display = 'none';}
-        else{carritoInfo.style.display = 'none';}
-
-
-
+    if(estaLogeado()){
+        let query2 = 'https://localhost:7300/Api/Carrito/ObtenerCarrito?id=1'
+        fetch(query2)
+        .then(response => response.json())
+        .then(data => {
+            let contador = 0;
+            data.juegos.forEach(e => {
+                RenderizarJuegos(e.productoId,contador)
+                contador++;
+            });
+            if(contador>0){carritovacio.style.display = 'none';}
+            else{carritoInfo.style.display = 'none';}
+        }
+        );
     }
-    );
+    else{location.href="./index.html"}
+
 }
 
 
@@ -81,7 +83,9 @@ const RenderizarJuegos = (id,incremental) => {
     fetch(query)
     .then(response => response.json())
     .then(e => { 
-        carritoContainer.innerHTML+=CardCarrito(e.juegoId,e.imagenes[0],e.precio,e.nombreProducto,incremental)
+        let bonificacion = 0;
+        if(e.enOferta){bonificacion=15}
+        carritoContainer.innerHTML+=CardCarrito(e.juegoId,e.imagenes[0],Redondeo(e.precio),e.nombreProducto,bonificacion)
         subtotal+= e.precio;
         if (e.enOferta) { descuento += e.precio*0.15;}
         imp= (subtotal-descuento)*0.21

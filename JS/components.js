@@ -28,9 +28,9 @@ export const NavMenu = () => {
 
 export const Footer = () => {
     return `<div id="redes-logos">
-      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.twitter.com"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.twitter.com"><i class="fab fa-facebook-f"></i></a>
+      <a Target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a Target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      <a Target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
     </div>
 
     <h2>Recursos</h2>
@@ -242,6 +242,12 @@ export const manejoToken = () => {
   }
 }
 
+export const estaLogeado = () => {
+  if(localStorage.getItem('tokenUserTE')!==null){return true;}
+  return false;
+}
+
+
 function parseJwt (token) {
   var base64Url = token.split('.')[1];
   var base64 = base64Url.replace('-', '+').replace('_', '/');
@@ -256,7 +262,7 @@ function getToken(){
 }
 
 export const gestionUsuario = () => {
-  if(localStorage.getItem('tokenUserTE')!==null){
+  if(estaLogeado()){
     document.getElementById("nombreUsuario").innerHTML = 'Hola, '+localStorage.getItem('userTE')+'!'
     document.getElementById("login").style.display = 'none';
     document.getElementById("logout").style.display = 'block';
@@ -270,50 +276,26 @@ export const gestionUsuario = () => {
     }
 }
 
-// export const CardCarrito = (id,portada,precio,nombre,incremental) => {
-//   return `
-//       <div class="carrito-card">
-//         <div class="carrito-card-imagen">
-//             <img onclick="" src="${portada}" alt="juego">
-//         </div>
-//         <div class="carrito-card-content">
-//             <div class="carrito-card-header">
-//                 <div class="carrito-card-info-categoria">
-//                     <h3>Juego Base</h3>
-//                 </div>
-//                 <h2 id="carrito-card-info-precio">${precio}.00 $USD</h2>
-//             </div>
-//             <div class="carrito-card-info">
-//                 <h2 id="carrito-card-info-titulo" onclick="">${nombre}</h2>
-//                 <div class="carrito-card-info-clasificacion">
-//                     <img id="clasificacion-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/ESRB_2013_Everyone_Spanish.svg/800px-ESRB_2013_Everyone_Spanish.svg.png" alt="xd">
-//                     <div class="clasificacion-info">
-//                         <h3>Mayores de 18 años</h3>
-//                         <h3>Violencia, Sangre, Lenguaje Ofensivo, Temas Sugestivos</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div class="carrito-card-footer">
-//                 <h2 id="carrito-card-plataforma">Play Station 5</h2>
-//                 <h2 id="eliminar-${incremental}"class="eliminarBoton" onclick=cuandoSeHaceClick()>Eliminar</h2>
-//             </div>
-//         </div>
-//       </div>`
-// }
 
-export const CardCarrito = (id,portada,precio,nombre,incremental) => {
+export const CardCarrito = (id,portada,precio,nombre,desc) => {
   return `
       <div class="carrito-card">
         <div class="carrito-card-imagen">
             <img onclick="" src="${portada}" alt="juego">
         </div>
         <div class="carrito-card-content">
+
             <div class="carrito-card-header">
                 <div class="carrito-card-info-categoria">
                     <h3>Video Juego</h3>
                 </div>
-                <h2 id="carrito-card-info-precio">${precio}.00 $USD</h2>
+                <div class="carrito-card-header-precio">
+                <h5 id="carrito-card-info-desc">${desc}%</h5>
+                <h2 id="carrito-card-info-precio">${precio}</h2>
+              </div>
             </div>
+
+            
             <div class="carrito-card-info">
                 <h2 id="carrito-card-info-titulo" onclick="">${nombre}</h2>
                 <div class="carrito-card-info-clasificacion">

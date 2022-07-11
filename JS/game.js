@@ -1,4 +1,4 @@
-import {NavMenu,Footer,CardJuegoPrincipal,gestionUsuario} from './components.js'
+import {NavMenu,Footer,CardJuegoPrincipal,gestionUsuario,estaLogeado} from './components.js'
 
 const header = document.getElementById("Menu");
 const contacto = document.getElementById("Contacto");
@@ -18,11 +18,14 @@ window.onload = () => {
 
 
 const comprar = () => {
-    postCarrito('./carrito.html');
+    if(estaLogeado()){postCarrito('./carrito.html');}
+    else{alert('Inicie Sesión')}
+    
 }
 
 const agregar = () => {
-    postCarrito('./game.html?juegoID='+idjuego);
+    if(estaLogeado()){postCarrito('./game.html?juegoID='+idjuego);}
+    else{alert('Inicie Sesión')}
 }
 
 

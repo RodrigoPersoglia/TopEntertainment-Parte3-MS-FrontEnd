@@ -333,7 +333,8 @@ main{
 /* ----filtros----*/
 #filtros-container{
     margin: 3% 0% 0% 0%;
-    width: 25%
+    width: 25%;
+
 }
 
 #filtro-input{
@@ -342,7 +343,14 @@ main{
     border-radius: 3px;
     padding: 4% 0% 4% 2%;
     color: whitesmoke;
+    height: 35px;
+    width: 90%;
     
+}
+
+#lupa{
+    width: 10%;
+    align-self: center;
 }
 
 #filtro-input:focus{
@@ -367,6 +375,7 @@ main{
     background-color: rgba(32,32,32,255);
     padding: 0% 0% 0% 5%;
     border-radius: 4px;
+    display: flex;
 }
 
 #dropdownMenuButton , .selects, #minPrice, #maxPrice{

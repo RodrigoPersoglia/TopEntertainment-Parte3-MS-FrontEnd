@@ -436,3 +436,21 @@ main{
     color: whitesmoke;
     background-color: rgba(42,42,42,255);
 }
+
+.carrito-card-header-precio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+    min-width: 30%;
+    margin: 0;
+    padding: 0;
+}
+
+.carrito-card-header h5{
+    font-size: 0.9rem;
+    background-color: rgba(0,116,228,255);
+    border-radius: 5px;
+    color: whitesmoke;
+    padding: 0% 5% 0% 5%;
+}
