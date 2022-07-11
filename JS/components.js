@@ -17,7 +17,7 @@ export const NavMenu = () => {
         <div id="fixed-header">
           <form class="search-bar" action="./search.html?">
             <input id="Busqueda" type="text" placeholder="Buscar..." name="juego">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit" style="background-color:transparent ;" ><i class="fa fa-search"></i></button>
           </form>
           <a href="../HTML/index.html">Descubrir</a>
           <a href="../HTML/search.html">Examinar</a>

@@ -67,8 +67,8 @@ function precios(){
 }
 
 const Recortar = (palabra) => {
-    if(palabra.length>32){
-        return palabra.substring(0,23)+'...';
+    if(palabra.length>25){
+        return palabra.substring(0,22)+'...';
     }
     return palabra
 }

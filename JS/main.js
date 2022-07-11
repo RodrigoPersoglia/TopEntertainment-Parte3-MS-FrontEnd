@@ -36,7 +36,7 @@ const CargarOfertas = () => {
     .then(response => response.json())
     .then(e => {
         for (var i = 0; i < 4; i++) {
-            ofertas.innerHTML+=Card(e[i].juegoId,Recortar(e[i].nombreProducto),'-15%',e[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e[i].imagenes[0]);
+            ofertas.innerHTML+=Card(e[i].juegoId,Recortar(e[i].nombreProducto,25),'-15%',e[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e[i].imagenes[0]);
          }
 
     });
@@ -85,18 +85,18 @@ const CargarVarios = () => {
         for (var i = 0; i < 4; i++) {
             var x = getRandomInt(0,max);
             var y = getRandomInt(0,max);
-            subcontainer1.innerHTML+=CardVarios(list[i].juegoId,Recortar(list[i].nombreProducto),list[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[i].imagenes[0])
-            subcontainer2.innerHTML+=CardVarios(list[x].juegoId,Recortar(list[x].nombreProducto),list[x].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[x].imagenes[0])
-            subcontainer3.innerHTML+=CardVarios(list[y].juegoId,Recortar(list[y].nombreProducto),list[y].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[y].imagenes[0])
+            subcontainer1.innerHTML+=CardVarios(list[i].juegoId,Recortar(list[i].nombreProducto,28),list[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[i].imagenes[0])
+            subcontainer2.innerHTML+=CardVarios(list[x].juegoId,Recortar(list[x].nombreProducto,28),list[x].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[x].imagenes[0])
+            subcontainer3.innerHTML+=CardVarios(list[y].juegoId,Recortar(list[y].nombreProducto,28),list[y].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[y].imagenes[0])
          }
     });
     
 
 }
 
-const Recortar = (palabra) => {
-    if(palabra.length>32){
-        return palabra.substring(0,25)+'...';
+const Recortar = (palabra,largo) => {
+    if(palabra.length>largo){
+        return palabra.substring(0,largo-3)+'...';
     }
     return palabra
 }
