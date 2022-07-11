@@ -35,7 +35,7 @@ const CargarOfertas = () => {
     fetch(query)
     .then(response => response.json())
     .then(e => {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < 4; i++) {
             ofertas.innerHTML+=Card(e[i].juegoId,Recortar(e[i].nombreProducto),'-15%',e[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),e[i].imagenes[0]);
          }
 
@@ -85,9 +85,9 @@ const CargarVarios = () => {
         for (var i = 0; i < 4; i++) {
             var x = getRandomInt(0,max);
             var y = getRandomInt(0,max);
-            subcontainer1.innerHTML+=CardVarios(Recortar(list[i].nombreProducto),list[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[i].imagenes[0])
-            subcontainer2.innerHTML+=CardVarios(Recortar(list[x].nombreProducto),list[x].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[x].imagenes[0])
-            subcontainer3.innerHTML+=CardVarios(Recortar(list[y].nombreProducto),list[y].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[y].imagenes[0])
+            subcontainer1.innerHTML+=CardVarios(list[i].juegoId,Recortar(list[i].nombreProducto),list[i].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[i].imagenes[0])
+            subcontainer2.innerHTML+=CardVarios(list[x].juegoId,Recortar(list[x].nombreProducto),list[x].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[x].imagenes[0])
+            subcontainer3.innerHTML+=CardVarios(list[y].juegoId,Recortar(list[y].nombreProducto),list[y].precio.toLocaleString('fr-FR', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}),list[y].imagenes[0])
          }
     });
     
@@ -96,7 +96,7 @@ const CargarVarios = () => {
 
 const Recortar = (palabra) => {
     if(palabra.length>32){
-        return palabra.substring(0,20)+'...';
+        return palabra.substring(0,25)+'...';
     }
     return palabra
 }

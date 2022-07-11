@@ -2,6 +2,12 @@
     padding: 0%;
     margin: 0%;
 }
+@font-face {
+    font-family: 'Rodrigo';
+    src: url('../Fonts/RACING\ HARD.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
 
 /* Colores:
     Azul:               rgba(0,116,228,255);
@@ -26,6 +32,11 @@ body{
 #logo{
     display: flex;
     align-items: center;
+}
+
+#logo h1{
+    font-family: 'Rodrigo';
+    font-size: 1.5rem;
 }
 
 #logo img{
@@ -92,6 +103,7 @@ h1{
     font-size:1rem;
     text-decoration: none;
     transition: 0.2s;
+    padding-left: 2rem;
 }
 
 #fixed-header-container a:hover{
@@ -242,13 +254,14 @@ h1{
     font-size: 1rem;
 }
 
-#eliminar-juego{
+.eliminarBoton{
     font-size: 1rem;
 }
 
-#eliminar-juego:hover{
+.eliminarBoton:hover{
     color: rgb(212, 212, 212);
     text-decoration: underline 1px;
+    cursor: pointer;
 }
 
 /*------ Resumen de Compra ------*/
@@ -413,4 +426,13 @@ header{
 }
 main{
     margin-top: 12rem;
+}
+
+.material-symbols-outlined{
+    font-size: 2rem;
+}
+
+.modal-content{
+    color: whitesmoke;
+    background-color: rgba(42,42,42,255);
 }

@@ -10,6 +10,8 @@ const descuentoResumen= document.getElementById("descuento");
 const botonComprar= document.getElementById("boton-comprar");
 const carritovacio= document.getElementById("carrito-null");
 const carritoInfo= document.getElementById("carrito");
+var botones = document.querySelectorAll(".eliminarBoton");
+
 
 let subtotal = 0;
 let imp=0;
@@ -30,33 +32,34 @@ const CargarCarrito = () => {
     .then(data => {
         let contador = 0;
         data.juegos.forEach(e => {
-            RenderizarJuegos(e.productoId)
+            RenderizarJuegos(e.productoId,contador)
             contador++;
         });
         if(contador>0){carritovacio.style.display = 'none';}
         else{carritoInfo.style.display = 'none';}
 
+
+
     }
     );
 }
 
-const eliminarItem = (id) => {
 
-      fetch(`https://localhost:7300/Api/Carrito/EliminarJuego?idCliente=1&idProducto=`+id,{
+const eliminarItem = function (evento) {
+
+      fetch(`https://localhost:7300/Api/Carrito/EliminarJuego?idCliente=1&idProducto=`+this.id,{
           method: 'DELETE',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
-            },
-                      
+            },             
       })
       .then((httpResponse)=>{
           if(httpResponse.ok)
               return httpResponse.json()
       })
-      
       .then(body => {
-          alert(body);
+          location.reload();
       })
 }
 
@@ -73,16 +76,20 @@ const Redondeo = (numero) =>{
 }
 
 
-const RenderizarJuegos = (id) => {
+const RenderizarJuegos = (id,incremental) => {
     let query = 'https://localhost:7284/juegos/'+id
     fetch(query)
     .then(response => response.json())
     .then(e => { 
-        carritoContainer.innerHTML+=CardCarrito(e.imagenes[0],e.precio,e.nombreProducto)
+        carritoContainer.innerHTML+=CardCarrito(e.juegoId,e.imagenes[0],e.precio,e.nombreProducto,incremental)
         subtotal+= e.precio;
-        if (e.enOferta) { descuento += e.precio*0.86;}
-        imp= subtotal*0.21
+        if (e.enOferta) { descuento += e.precio*0.15;}
+        imp= (subtotal-descuento)*0.21
         ResumenCompra(subtotal,imp,descuento);
+        botones = document.querySelectorAll(".eliminarBoton");
+        botones.forEach(boton => {
+            boton.addEventListener("click", eliminarItem);
+        });
     });
 }
 
@@ -101,8 +108,7 @@ const postCompra = (importe) => {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(jsonBody)
-            
+            body: JSON.stringify(jsonBody)  
       })
       .then((httpResponse)=>{
           if(httpResponse.ok)
@@ -110,8 +116,6 @@ const postCompra = (importe) => {
       })
       
       .then(body => {
-          alert(body);
-          location.reload();
       })
 }
 

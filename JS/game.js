@@ -18,13 +18,11 @@ window.onload = () => {
 
 
 const comprar = () => {
-    postCarrito();
-    location.href='./carrito.html';
+    postCarrito('./carrito.html');
 }
 
 const agregar = () => {
-    postCarrito();
-    location.reload();
+    postCarrito('./game.html?juegoID='+idjuego);
 }
 
 
@@ -58,7 +56,7 @@ function getQueryParams() {
 
 
 
-const postCarrito = () => {
+const postCarrito = (ruta) => {
     let jsonBody={
         "usuarioId": 1,
         "productoId": idjuego,
@@ -80,5 +78,6 @@ const postCarrito = () => {
       
       .then(body => {
           alert(body);
+          location.href=ruta;
       })
 }

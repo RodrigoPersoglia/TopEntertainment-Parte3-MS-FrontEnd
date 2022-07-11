@@ -3,6 +3,13 @@
     margin: 0%;
 }
 
+@font-face {
+    font-family: 'Rodrigo';
+    src: url('../Fonts/RACING\ HARD.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
 /* Colores:
     Azul:               rgba(0,116,228,255);
     Fondo Oscuro:       rgba(18,18,18,255);
@@ -26,6 +33,12 @@ body{
 #logo{
     display: flex;
     align-items: center;
+}
+
+#logo h1{
+    font-family: 'Rodrigo';
+    font-size: 1.5rem;
+
 }
 
 #logo img{
@@ -88,6 +101,7 @@ h1{
     font-size:1rem;
     text-decoration: none;
     transition: 0.2s;
+    padding-left: 2rem;
 }
 
 #fixed-header-container a:hover{
@@ -316,10 +330,11 @@ main{
     min-width: 30%;
     background-color: rgba(30,30,30,255);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .varios-subcontainer h2{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .varios-subcontainer button{
@@ -463,3 +478,5 @@ header{
 main{
     margin-top: 12rem;
 }
+
+
