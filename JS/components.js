@@ -248,19 +248,6 @@ export const estaLogeado = () => {
 }
 
 
-function parseJwt (token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace('-', '+').replace('_', '/');
-  return JSON.parse(window.atob(base64));
-};
-
-function getToken(){
-  let url = window.location.toString();
-  var posicion = url.indexOf('token')
-  if(posicion===-1){return null}
-  return url.substring(posicion+6)
-}
-
 export const gestionUsuario = () => {
   if(estaLogeado()){
     document.getElementById("nombreUsuario").innerHTML = 'Hola, '+localStorage.getItem('userTE')+'!'
@@ -313,4 +300,17 @@ export const CardCarrito = (id,portada,precio,nombre,desc) => {
             </div>
         </div>
       </div>`
+}
+
+function parseJwt (token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace('-', '+').replace('_', '/');
+  return JSON.parse(window.atob(base64));
+};
+
+function getToken(){
+  let url = window.location.toString();
+  var posicion = url.indexOf('token')
+  if(posicion===-1){return null}
+  return url.substring(posicion+6)
 }
